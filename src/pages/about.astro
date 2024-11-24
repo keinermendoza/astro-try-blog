@@ -1,5 +1,5 @@
 ---
-import '../styles/global.css';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
 const pageTitle = "Conoce a Keiner";
 const identity = {
@@ -16,40 +16,11 @@ const textCase = 'uppercase';
 const fontWeight = 700;
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-
-		<style define:vars={{skillColor, fontWeight, textCase}}>
-			h1 {
-			  color: purple;
-			  font-size: 4rem;
-			}
-			.skill {
-				color: var(--skillColor);
-				font-weight: var(--fontWeight);
-				text-transform: var(--textCase);
-			}
-		  </style>
-
-	</head>
-	<body>
-		<nav>
-			<a href="/">Home</a>
-			<a href="/about/">About</a>
-			<a href="/blog/">Blog</a>
-		</nav>
-		
-		<section>
-		<h1>{pageTitle}</h1>
+<BaseLayout pageTitle={pageTitle}>
+	<section>
 		<p>Soy un desarrollador web con experiencia en la creación de apps usando diferentes lenguajes de programación</p>
 		<p>Me gusta mantenerme aprendiendo cosas brindo soluciones de desarrollo</p>
 		<p>Originalmente me enfoocaba en el backend, principalmente usando python y django. Actualmente tambien desarrollo frontend con JavaScript y <b>Astro</b> </p>
-
 		<p>Here are a few facts about me:</p>
 
 		<ul>
@@ -65,6 +36,18 @@ const fontWeight = 700;
 		<ul>
 		{skills.map((skill) => <li class="skill">{skill}</li>)}
 		</ul>
-		</section>
-	</body>
-</html>
+	</section>
+</BaseLayout > 
+	
+
+ <style is:global define:vars={{skillColor, fontWeight, textCase}}>
+	h1 {
+	  color: purple;
+	  font-size: 4rem;
+	}
+	.skill {
+		color: var(--skillColor);
+		font-weight: var(--fontWeight);
+		text-transform: var(--textCase);
+	}
+  </style>
