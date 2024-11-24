@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: 'Mi Primera Publicación'
 pubDate: 2024-11-20
 description: 'Mi inicio con Astro.'
@@ -9,9 +10,7 @@ image:
 tags: ["programación", "blogging", "aprendiendo en publico"]
 ---
 
-# Mi Primera Publicación
 
-Publicado el: 2024-11-20
 
 Este de aqui es mi primer proyecto usando Astro
 ## Que cosas he hecho
