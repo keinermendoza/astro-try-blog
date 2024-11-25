@@ -1,6 +1,7 @@
 ---
 const { frontmatter } = Astro.props;
 import BaseLayout from './BaseLayout.astro';
+import TagList from '../components/TagList.astro';
 ---
 <BaseLayout pageTitle={frontmatter.title}>
     <p>{frontmatter.pubDate.toString().slice(0,10)}</p>
@@ -8,5 +9,7 @@ import BaseLayout from './BaseLayout.astro';
     <p>Written by: {frontmatter.author}</p>
     <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
     <slot />
+    <TagList tags={frontmatter.tags} />
+
 </BaseLayout>
 
